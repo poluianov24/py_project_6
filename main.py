@@ -5,8 +5,12 @@ def Func(x, y):
     res = 0
     for i in x:
         if i == y:
-            x.remove(y)
             res += 1
+            x.remove(y)
+            for a in x:
+                if a == y:
+                    res += 1
+                    x.remove(y)
     return res
 
-print(Func([11, 2, 7, 8, 5, 2, 3, 4, 6, 2, 5], 2))
+print(Func([11, 2, 2, 2, 5, 2, 3, 4, 6, 2, 5], 2))
